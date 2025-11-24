@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Better New Products</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+    <nav class="nav container">
+        <h1 class="logo">Better New Products</h1>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+</header>
+
+<section class="section contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p>Get in touch for orders, bulk enquiries, or partnership opportunities.</p>
+
+    <div class="container">
+        <form action="https://formspree.io/f/yourFormID" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Your Full Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+            <button class="btn" type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Better New Products. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
