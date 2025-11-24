@@ -2,80 +2,1042 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Better New Products</title>
-
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better New Products | Innovative Solutions for Modern Living</title>
+    <meta name="description" content="Discover innovative products that enhance your daily life. Better New Products brings you cutting-edge solutions for modern living.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/main.css">
+    <style>
+        /* Footer Background Image Styles */
+        footer {
+            position: relative;
+            background-color:green;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .footer-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./Assets/footer.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+            z-index: 1;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Ensure text remains readable */
+        footer h3,
+        footer p,
+        footer li,
+        footer a {
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Footer specific styles */
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #a5b4fc;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Container for footer content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 0 30px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <header>
-        <nav class="nav container">
-            <h1 class="logo">Better New Products</h1>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h2>Discover Quality Products For Your Everyday Needs</h2>
-        <p>We supply durable, reliable, and modern products designed to make life easier. Explore our wide range of innovative solutions today.</p>
-        <a href="products.html" class="btn">View Products</a>
-    </section>
-
-    <section class="section about">
-        <h2 class="section-title">About Us</h2>
-        <p>
-            Better New Products is committed to delivering high-quality goods at affordable prices. 
-            From home essentials to innovative tools, we prioritize value, durability, and customer satisfaction.
-        </p>
-    </section>
-
-    <section class="section">
-        <h2 class="section-title">Featured Products</h2>
-
-        <div class="grid container">
-            <div class="card">
-                <img src="assets/images/product1.jpg" alt="Product 1" />
-                <h3>Premium Kettle</h3>
-                <p>Durable stainless-steel kettle with fast-boil technology.</p>
+    <section class="hero" id="home">
+        <!-- Header inside hero section -->
+        <header id="main-header">
+            <div class="container">
+                <nav class="navbar">
+                <img src="Assets/logo.jpg" alt="Better New Products Logo" class="logo" height="60px" width="120px">
+                    <div class="nav-links">
+                        <a href="#home">Home</a>
+                        <a href="#products">Products</a>
+                        <a href="#about">About</a>
+                        <a href="#testimonials">Testimonials</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#" class="cart-icon" id="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cart-count">0</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
             </div>
+        </header>
 
-            <div class="card">
-                <img src="assets/images/product2.jpg" alt="Product 2" />
-                <h3>Smart LED Lamp</h3>
-                <p>Adjustable lighting with energy-saving features.</p>
-            </div>
-
-            <div class="card">
-                <img src="assets/images/product3.jpg" alt="Product 3" />
-                <h3>Multipurpose Blender</h3>
-                <p>Blend smoothies, sauces, and more with this powerful blender.</p>
+        <!-- Hero Content -->
+        <div class="container">
+            <div class="hero-content">
+                <h1 style="color: white;">Innovative Products for Modern Living</h1>
+                <p style="color: white;">Discover cutting-edge solutions that enhance your daily life. Better New Products brings you the latest innovations designed with quality and functionality in mind.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-secondary" style="background-color: Green;">Explore Products</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div style="text-align:center; margin-top: 30px;">
-            <a href="products.html" class="btn" style="padding:12px 30px;">Explore All Products</a>
+    <!-- Featured Products Section with Background Image -->
+    <section class="products-section" id="products" style="background-color: green">
+        <!-- Background Image -->
+        <div class="products-bg"></div>
+        <div class="products-overlay"></div>
+        
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;" >Featured Products</h2>
+                <p style="color: white;">Check out our latest and most popular innovations</p>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 style="color: green;">About Better New Products</h2>
+                    <p>We are passionate about discovering and bringing to market innovative products that solve everyday problems and enhance people's lives.</p>
+                    <p>Our team carefully evaluates each product for quality, functionality, and value before adding it to our collection. We believe that great design should be accessible to everyone.</p>
+                    <p>Since our founding in 2018, we've helped thousands of customers discover products that make their lives easier, more efficient, and more enjoyable.</p>
+                    <a href="#contact" class="btn btn-primary" style="background-color: green;">Get In Touch</a>
+                </div>
+               <div class="about-video-container">
+                    <div class="video-overlay"></div>
+                    <video class="about-video-background" autoplay muted loop>
+                        <source src="Assets/0_Sale_Shopping_Bags_3840x2160.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section contact">
-        <h2 class="section-title">Get in Touch</h2>
-        <p>Have questions or want to place a bulk order? We’re here to help.</p>
-        <p><a href="contact.html">Contact Us →</a></p>
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials" style="background-color: green;">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Customer Testimonials</h2>
+                <p style="color: white;">See what our customers are saying about our products</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonials-track" id="testimonials-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text">
+                                The wireless earbuds have completely changed my daily commute. The noise cancellation is incredible and the battery life lasts all week!
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text">
+                                I was skeptical at first, but the smart home hub has made my life so much easier. Setting up routines for lighting and temperature has saved me time and energy.
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Michael Chen</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text">
+                                The ergonomic office chair is worth every penny. My back pain has significantly decreased since I started using it. Highly recommended for anyone who works from home!
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Emily Rodriguez</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text">
+                                I've tried many fitness trackers, but this one is by far the most accurate and comfortable to wear. The sleep tracking feature has helped me improve my sleep quality significantly.
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>David Wilson</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text">
+                                The portable solar charger saved me during my camping trip. It charged my phone and GPS device multiple times. A must-have for any outdoor enthusiast!
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Jessica Miller</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-text">
+                                As someone who works from home, the ergonomic chair has been a game-changer. My productivity has increased and I no longer have back pain at the end of the day.
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Robert Taylor</h4>
+                                    <p>Verified Customer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prev-testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="slider-dots" id="testimonial-dots">
+                        <!-- Dots will be generated dynamically -->
+                    </div>
+                    
+                    <button class="slider-btn" id="next-testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Footer with Background Image -->
     <footer>
-        <p>&copy; 2025 Better New Products. All rights reserved.</p>
+        <!-- Background Image -->
+        <div class="footer-bg-image"></div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Better New Products</h3>
+                    <p>Bringing you innovative solutions for modern living since 2018.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 57 Fox Street, Johannesburg, 2000</li>
+                        <li><i class="fas fa-phone"></i> 086 865 8889</li>
+                        <li><i class="fas fa-envelope"></i> info@betternewproducts.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Better New Products. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Shopping Cart</h2>
+                <button class="close-modal" id="close-cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be dynamically loaded here -->
+            </div>
+            <div class="cart-total" id="cart-total">Total: R0.00</div>
+            <button class="btn btn-primary checkout-btn" id="checkout-btn">Proceed to Checkout via WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="modal product-detail-modal" id="product-detail-modal">
+        <div class="modal-content">
+            <div class="product-detail-content">
+                <div class="product-detail-header">
+                    <h2>Product Details</h2>
+                    <button class="close-modal" id="close-product-detail">&times;</button>
+                </div>
+                <div class="product-detail-body">
+                    <div class="product-detail-image">
+                        <img id="detail-product-image" src="" alt="Product Image">
+                    </div>
+                    <div class="product-detail-info">
+                        <h3 class="product-detail-title" id="detail-product-name"></h3>
+                        <div class="product-detail-price" id="detail-product-price"></div>
+                        <p class="product-detail-description" id="detail-product-description"></p>
+                        
+                        <div class="product-detail-features">
+                            <h4>Key Features:</h4>
+                            <ul id="detail-product-features">
+                                <!-- Features will be dynamically loaded here -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-detail-actions-container">
+                    <div class="product-detail-quantity">
+                        <label for="detail-quantity-input">Quantity:</label>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus" id="detail-quantity-minus">-</button>
+                            <input type="number" class="quantity-input" id="detail-quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus" id="detail-quantity-plus">+</button>
+                        </div>
+                    </div>
+                    <div class="product-detail-actions">
+                        <button class="btn btn-primary" id="detail-add-to-cart">Add to Cart</button>
+                        <button class="btn btn-outline" id="detail-close-btn">Continue Shopping</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Notification -->
+    <div class="cart-notification" id="cart-notification">
+        Product added to cart!
+    </div>
+
+    <script>
+        // Product data - In a real application, this would come from a backend API
+        const products = [
+            {
+                id: 1,
+                name: "Better Life Product",
+                price: 129.99,
+                image: "./Assets/better1.png",
+                description: "Experience premium sound quality with our advanced Wireless Earbuds Pro. Featuring active noise cancellation technology that blocks out ambient noise, these earbuds provide an immersive audio experience whether you're commuting, working, or relaxing.",
+                features: [
+                    "Active Noise Cancellation technology",
+                    "30-hour total battery life with charging case",
+                    "Premium sound quality with deep bass",
+                    "Sweat and water resistant (IPX4)",
+                    "Comfortable, secure fit for all-day wear",
+                    "Voice assistant compatible",
+                    "Quick charge: 15 minutes = 3 hours of playback"
+                ],
+                stock: 15
+            },
+            {
+                id: 2,
+                name: "Better Life Product",
+                price: 199.99,
+                image: "./Assets/better2.jpg" ,
+                description: "Transform your home into a smart home with our intuitive Smart Home Hub. Control all your compatible smart devices with simple voice commands or through our user-friendly mobile app. Create custom routines that automate your daily tasks for ultimate convenience.",
+                features: [
+                    "Voice control with built-in assistant",
+                    "Compatible with 100+ smart home devices",
+                    "Create custom routines and automations",
+                    "Crystal-clear speaker with room-filling sound",
+                    "Easy setup with guided installation",
+                    "Privacy controls to manage your data",
+                    "Regular software updates with new features"
+                ],
+                stock: 8
+            },
+            {
+                id: 3,
+                name: "New Age Foam Bath",
+                price: 79.99,
+                image: "./Assets/better3.jpg",
+                description: "Never run out of power again with our high-efficiency Portable Solar Charger. Perfect for camping trips, outdoor adventures, or emergency preparedness. The built-in battery stores solar energy so you can charge your devices anytime, anywhere.",
+                features: [
+                    "High-efficiency solar panels (23% conversion rate)",
+                    "10,000mAh built-in battery capacity",
+                    "Dual USB ports for charging multiple devices",
+                    "Fast charging technology",
+                    "Water and dust resistant (IP65)",
+                    "Compact, foldable design for easy transport",
+                    "LED power indicator and built-in flashlight"
+                ],
+                stock: 25
+            },
+            {
+                id: 4,
+                name: "Better Life Product",
+                price: 349.99,
+                image: "./Assets/better4.jpg",
+                description: "Designed for maximum comfort during long work hours, our Ergonomic Office Chair features advanced lumbar support and breathable mesh material. The fully adjustable components allow you to customize the chair to your exact body specifications for optimal posture and comfort.",
+                features: [
+                    "Advanced adjustable lumbar support",
+                    "Breathable mesh back for air circulation",
+                    "Multi-functional tilt mechanism",
+                    "Adjustable armrests (height, width, and pivot)",
+                    "High-density foam seat cushion",
+                    "Smooth-rolling dual-wheel casters",
+                    "Weight capacity: 300 lbs (136 kg)"
+                ],
+                stock: 5
+            },
+            {
+                id: 5,
+                name: "Better Life Product",
+                price: 89.99,
+                image: "./Assets/better5.png",
+                description: "Track your fitness journey with precision using our advanced Fitness Tracker Pro. Monitor your workouts, heart rate, sleep patterns, and more with this comfortable, feature-packed wearable. Connect with our app to set goals, view trends, and join challenges.",
+                features: [
+                    "24/7 heart rate monitoring",
+                    "Advanced sleep tracking with stages analysis",
+                    "20+ exercise modes with automatic detection",
+                    "5-day battery life on a single charge",
+                    "Water resistant up to 50 meters",
+                    "Smartphone notifications for calls and messages",
+                    "Women's health tracking and insights"
+                ],
+                stock: 20
+            },
+            {
+                id: 6,
+                name: "Better Life Product",
+                price: 39.99,
+                image: "./Assets/better1.png",
+                description: "Stay perfectly hydrated throughout the day with our Smart Water Bottle. This innovative bottle tracks your water intake and sends reminders to your phone when it's time to drink. Made from durable, BPA-free materials with multiple size options to fit your lifestyle.",
+                features: [
+                    "Hydration tracking with companion app",
+                    "Smart reminders to drink water",
+                    "Durable, BPA-free Tritan material",
+                    "Leak-proof lid with carrying loop",
+                    "Dishwasher safe for easy cleaning",
+                    "Long-lasting battery (up to 2 weeks)",
+                    "Available in 3 sizes: 20oz, 32oz, and 40oz"
+                ],
+                stock: 30
+            }
+        ];
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let currentProductDetail = null;
+
+        // Testimonials slider functionality
+        let currentTestimonialIndex = 0;
+        let testimonialCards = [];
+        let testimonialDots = [];
+        let slidesPerView = 1;
+        let autoSlideInterval;
+
+        // WhatsApp configuration - REPLACE WITH YOUR ACTUAL WHATSAPP NUMBER
+        const whatsappNumber = "+27764066951"; // Replace with your actual WhatsApp number (without + or country code)
+        const whatsappMessageTemplate = "Hello! I would like to complete my purchase. Here are the items in my cart:";
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+            updateCartCount();
+            initTestimonialsSlider();
+            
+            // Cart modal functionality
+            document.getElementById('cart-icon').addEventListener('click', function(e) {
+                e.preventDefault();
+                openCartModal();
+            });
+            
+            document.getElementById('close-cart').addEventListener('click', closeCartModal);
+            
+            // WhatsApp checkout functionality
+            document.getElementById('checkout-btn').addEventListener('click', function() {
+                if (cart.length === 0) {
+                    alert('Your cart is empty. Please add some products before checking out.');
+                    return;
+                }
+                proceedToWhatsAppCheckout();
+            });
+            
+            // Close modal when clicking outside
+            document.getElementById('cart-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeCartModal();
+                }
+            });
+            
+            // Product detail modal functionality
+            document.getElementById('close-product-detail').addEventListener('click', closeProductDetailModal);
+            document.getElementById('detail-close-btn').addEventListener('click', closeProductDetailModal);
+            
+            document.getElementById('product-detail-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeProductDetailModal();
+                }
+            });
+            
+            // Product detail quantity controls
+            document.getElementById('detail-quantity-plus').addEventListener('click', function() {
+                const quantityInput = document.getElementById('detail-quantity-input');
+                let value = parseInt(quantityInput.value);
+                quantityInput.value = value + 1;
+            });
+            
+            document.getElementById('detail-quantity-minus').addEventListener('click', function() {
+                const quantityInput = document.getElementById('detail-quantity-input');
+                let value = parseInt(quantityInput.value);
+                if (value > 1) {
+                    quantityInput.value = value - 1;
+                }
+            });
+            
+            // Add to cart from product detail
+            document.getElementById('detail-add-to-cart').addEventListener('click', function() {
+                if (currentProductDetail) {
+                    const quantityInput = document.getElementById('detail-quantity-input');
+                    const quantity = parseInt(quantityInput.value);
+                    addToCart(currentProductDetail.id, quantity);
+                    closeProductDetailModal();
+                }
+            });
+            
+            // Testimonial slider controls
+            document.getElementById('prev-testimonial').addEventListener('click', prevTestimonial);
+            document.getElementById('next-testimonial').addEventListener('click', nextTestimonial);
+            
+            // Handle window resize for responsive slider
+            window.addEventListener('resize', updateSlidesPerView);
+        });
+
+        // Open product detail modal
+        function openProductDetailModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            currentProductDetail = product;
+            
+            // Populate modal with product data
+            document.getElementById('detail-product-image').src = product.image;
+            document.getElementById('detail-product-image').alt = product.name;
+            document.getElementById('detail-product-name').textContent = product.name;
+            document.getElementById('detail-product-price').textContent = `$${product.price.toFixed(2)}`;
+            document.getElementById('detail-product-description').textContent = product.description;
+            
+            // Populate features list
+            const featuresList = document.getElementById('detail-product-features');
+            featuresList.innerHTML = '';
+            product.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+            
+            // Reset quantity
+            document.getElementById('detail-quantity-input').value = 1;
+            
+            // Show modal
+            document.getElementById('product-detail-modal').style.display = 'flex';
+        }
+
+        // Close product detail modal
+        function closeProductDetailModal() {
+            document.getElementById('product-detail-modal').style.display = 'none';
+            currentProductDetail = null;
+        }
+
+        // Initialize testimonials slider
+        function initTestimonialsSlider() {
+            testimonialCards = document.querySelectorAll('.testimonial-card');
+            const dotsContainer = document.getElementById('testimonial-dots');
+            
+            // Create dots
+            for (let i = 0; i < testimonialCards.length; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'slider-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToTestimonial(i));
+                dotsContainer.appendChild(dot);
+                testimonialDots.push(dot);
+            }
+            
+            // Set initial slides per view based on screen size
+            updateSlidesPerView();
+            
+            // Start auto slide
+            startAutoSlide();
+        }
+
+        // Update slides per view based on screen width
+        function updateSlidesPerView() {
+            if (window.innerWidth >= 1024) {
+                slidesPerView = 3;
+            } else if (window.innerWidth >= 768) {
+                slidesPerView = 2;
+            } else {
+                slidesPerView = 1;
+            }
+            
+            // Update track width and position
+            updateSliderPosition();
+        }
+
+        // Update slider position
+        function updateSliderPosition() {
+            const track = document.getElementById('testimonials-track');
+            const slideWidth = 100 / slidesPerView;
+            track.style.transform = `translateX(-${currentTestimonialIndex * slideWidth}%)`;
+            
+            // Update active dot
+            testimonialDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentTestimonialIndex);
+            });
+        }
+
+        // Go to specific testimonial
+        function goToTestimonial(index) {
+            // Ensure index is within bounds
+            if (index < 0) {
+                index = testimonialCards.length - slidesPerView;
+            } else if (index > testimonialCards.length - slidesPerView) {
+                index = 0;
+            }
+            
+            currentTestimonialIndex = index;
+            updateSliderPosition();
+            
+            // Reset auto slide timer
+            resetAutoSlide();
+        }
+
+        // Next testimonial
+        function nextTestimonial() {
+            let nextIndex = currentTestimonialIndex + 1;
+            
+            // If we're at the end, loop back to start
+            if (nextIndex > testimonialCards.length - slidesPerView) {
+                nextIndex = 0;
+            }
+            
+            goToTestimonial(nextIndex);
+        }
+
+        // Previous testimonial
+        function prevTestimonial() {
+            let prevIndex = currentTestimonialIndex - 1;
+            
+            // If we're at the start, loop to end
+            if (prevIndex < 0) {
+                prevIndex = testimonialCards.length - slidesPerView;
+            }
+            
+            goToTestimonial(prevIndex);
+        }
+
+        // Start auto slide
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextTestimonial, 5000);
+        }
+
+        // Reset auto slide timer
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Render products to the page
+        function renderProducts() {
+            const productsGrid = document.getElementById('products-grid');
+            productsGrid.innerHTML = '';
+            
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <h3 style="color: #2563eb;">${product.name}</h3>
+                        <div class="product-price">${product.price.toFixed(2)}</div>
+                        <p class="product-description">${product.description.substring(0, 100)}...</p>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus" data-id="${product.id}">-</button>
+                            <input type="number" class="quantity-input" id="quantity-${product.id}" value="1" min="1" max="${product.stock}">
+                            <button class="quantity-btn plus" data-id="${product.id}">+</button>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="${product.id}">Add to Cart</button>
+                            <button class="btn btn-outline view-details" data-id="${product.id}">View Details</button>
+                        </div>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productCard);
+            });
+            
+            // Add event listeners to buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    const quantityInput = document.getElementById(`quantity-${productId}`);
+                    const quantity = parseInt(quantityInput.value);
+                    addToCart(productId, quantity);
+                });
+            });
+            
+            document.querySelectorAll('.view-details').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    openProductDetailModal(productId);
+                });
+            });
+            
+            document.querySelectorAll('.quantity-btn.plus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    const quantityInput = document.getElementById(`quantity-${productId}`);
+                    let value = parseInt(quantityInput.value);
+                    const max = parseInt(quantityInput.max);
+                    
+                    if (value < max) {
+                        quantityInput.value = value + 1;
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.quantity-btn.minus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    const quantityInput = document.getElementById(`quantity-${productId}`);
+                    let value = parseInt(quantityInput.value);
+                    
+                    if (value > 1) {
+                        quantityInput.value = value - 1;
+                    }
+                });
+            });
+        }
+
+        // Add product to cart
+        function addToCart(productId, quantity) {
+            const product = products.find(p => p.id === productId);
+            
+            if (!product) return;
+            
+            // Check if product is already in cart
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: quantity
+                });
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Show notification
+            showCartNotification();
+        }
+
+        // Update cart count in header
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        // Show cart notification
+        function showCartNotification() {
+            const notification = document.getElementById('cart-notification');
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Open cart modal
+        function openCartModal() {
+            const modal = document.getElementById('cart-modal');
+            modal.style.display = 'flex';
+            renderCartItems();
+        }
+
+        // Close cart modal
+        function closeCartModal() {
+            const modal = document.getElementById('cart-modal');
+            modal.style.display = 'none';
+        }
+
+        // Render cart items in modal
+        function renderCartItems() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Your cart is empty</p>';
+                cartTotal.textContent = 'Total: $0.00';
+                return;
+            }
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                
+                cartItem.innerHTML = `
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>$${item.price.toFixed(2)} × ${item.quantity}</p>
+                    </div>
+                    <div class="cart-item-actions">
+                        <span>$${itemTotal.toFixed(2)}</span>
+                        <button class="btn btn-outline remove-item" data-id="${item.id}">Remove</button>
+                    </div>
+                `;
+                
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    removeFromCart(productId);
+                });
+            });
+        }
+
+        // Remove item from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            renderCartItems();
+        }
+
+        // Proceed to WhatsApp checkout
+        function proceedToWhatsAppCheckout() {
+            // Calculate total
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            // Build order summary
+            let orderSummary = `${whatsappMessageTemplate}\n\n`;
+            
+            cart.forEach(item => {
+                orderSummary += `• ${item.name} - $${item.price.toFixed(2)} × ${item.quantity} = $${(item.price * item.quantity).toFixed(2)}\n`;
+            });
+            
+            orderSummary += `\nTotal: $${total.toFixed(2)}`;
+            orderSummary += `\n\nPlease provide your shipping details and preferred payment method.`;
+            
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(orderSummary);
+            
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/+27764066951?text=${encodedMessage}`;
+            
+            // Open WhatsApp in a new tab
+            window.open(whatsappURL, '_blank');
+            
+            // Close cart modal
+            closeCartModal();
+            
+            // Optional: Clear cart after checkout
+            // cart = [];
+            // localStorage.setItem('cart', JSON.stringify(cart));
+            // updateCartCount();
+        }
+
+        // Original JavaScript functionality
+        // Simple mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Update year in footer
+        document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} Better New Products. All rights reserved.`;
+        
+        // Fallback for video loading
+        const video = document.querySelector('.about-video-background');
+        if (video) {
+            video.addEventListener('error', function() {
+                // If video fails to load, set a fallback background
+                document.querySelector('.about-video-container').style.background = 'linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)';
+            });
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
